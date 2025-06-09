@@ -29,7 +29,7 @@
         <div class="profile-container">
             <div class="profile-card">
                 <div class="profile-img">
-                    <img src="{% static 'default-profile.png' %}" alt="Profile Image">
+                    <img src="{% static 'default-profile.png' %}" >
                 </div>
                 <div class="profile-info">
                     <h1 class="user-name">{{ user.get_full_name|default:user.username }}</h1>
