@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b$odky05!u)2t@xh8=x(d+t@ekr$oheb%%byox)no^urvl-e5e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['artist-showcase-hub.onrender.com','127.0.0.1',  'localhost']
+ALLOWED_HOSTS = ['127.0.0.1',  'localhost','artist-showcase-hub.onrender.com']
 
 
 # Application definition
