@@ -1,1 +1,1 @@
-web: gunicorn artist_showcase.wsgi
+web: gunicorn ARTIST0_SHOWCASE_HUB.wsgi
