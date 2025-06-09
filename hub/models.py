@@ -1,4 +1,5 @@
 from django.db import models
+
 from django.contrib.auth.models import User
 from django.conf import settings
 
@@ -127,3 +128,7 @@ class Comment(models.Model):
     painting = models.ForeignKey(Painting, related_name='comments', on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+# Create your models here.
+

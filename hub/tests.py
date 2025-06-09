@@ -1,3 +1,4 @@
+
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.contrib.auth import get_user_model
 from selenium import webdriver
@@ -30,3 +31,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.assertIn("Profile", self.browser.page_source)
 
     
+
+from django.test import TestCase
+
+# Create your tests here.

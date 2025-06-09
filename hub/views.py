@@ -1,4 +1,5 @@
 
+
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404,redirect
 from django.http import HttpResponse
@@ -352,4 +353,9 @@ def create_user_view(request):
     User = get_user_model()
     User.objects.create_user(username='john', password='john123')
     return HttpResponse("User created")
+
+
+from django.shortcuts import render
+
+# Create your views here.
 
