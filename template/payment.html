@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Process - Artist's Showcase Hub</title>
     {% load static %}
-
     <link rel="stylesheet" href="{% static 'payment.css' %}">
 </head>
 <body>
@@ -45,11 +44,13 @@
                     that celebrate the creativity and skill of local talent. Whether you're an artist or an art enthusiast,
                     this is the place for you!
                 </p>
-            
             </div>
         </section>
+
         <div>
-            <button><a href="{% url 'artist_profile' %}"><strong>Artists</strong></a></button>
+            <a href="{% url 'artist_profile' %}">
+                <button><strong>Artists</strong></button>
+            </a>
         </div>
 
         <!-- Payment Section -->
@@ -57,31 +58,36 @@
             <h2>Payment Details</h2>
             <form action="{% url 'purchase' %}" method="POST" class="payment-form">
                 {% csrf_token %}
+               
                 <div class="form-group">
-                    <label for="name">Card Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter card name" required>
+                    <label for="card_name">Name on Card:</label>
+                    <input type="text" id="card_name" name="card_name" placeholder="name" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="my">Expiration Date (MM/YY):</label>
-                    <input type="number" id="my" name="my" placeholder="MM/YY" required>
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" >
                 </div>
+
+                <div class="form-group">
+                    <label for="expiry_date">Expiration Date (MM/YY):</label>
+                    <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                </div>
+
                 <div class="form-group">
                     <label for="cvc">CVC/CVV:</label>
-                    <input type="number" id="cvc" name="cvc" placeholder="Enter CVC" required>
+                    <input type="text" id="cvc" name="cvc" placeholder="e.g., 123" required pattern="\d{3,4}">
                 </div>
-                <div class="form-group">
-                    <label for="hname">Card holder's Name:</label>
-                    <input type="text" id="hname" name="hname" placeholder="Enter card holder's name" required>
-                </div>
+
                 <div class="form-group checkbox-group">
-                    <input type="checkbox" id="ps" name="ps" class="checkbox-input" aria-label="Save card and remember me">
-                    <label for="ps" class="checkbox-label">Save Card & Remember Me</label>
+                    <input type="checkbox" id="save_card" name="save_card" class="checkbox-input">
+                    <label for="save_card" class="checkbox-label">Save Card & Remember Me</label>
                 </div>
-                
+
                 <div class="form-group">
-                    <!-- 'Pay Now' button with submission action -->
-                    <button type="submit" class="pay-now-button"><a href="{% url 'payment' %}"><strong>Pay Now</strong></a></button>
+                    <button type="submit" class="pay-now-button"><strong>Pay Now</strong></button>
                 </div>
+
                 <div class="form-group">
                     <input type="button" value="Back" class="btn-secondary" onclick="window.history.back();">
                 </div>
@@ -95,8 +101,8 @@
             <p>&copy; Artist's Showcase Hub. All rights reserved.</p>
             <p>Follow us on social media!</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/">Facebook</a> | 
-                <a href="https://twitter.com/?lang=en">Twitter</a> | 
+                <a href="https://www.facebook.com/">Facebook</a> |
+                <a href="https://twitter.com/?lang=en">Twitter</a> |
                 <a href="https://www.instagram.com/">Instagram</a>
             </div>
         </div>
